@@ -5,6 +5,7 @@ XML xpath based validation
 
 ##Features
 - Regex based validation
+- Element count validation
 - Compatible with PHP >= 5.6 and [HHVM](http://hhvm.com/)
 
 ##Usage
