@@ -30,6 +30,10 @@ class MyRules implements RulableInterface
                 'xpath' => '//my-node/@my-attribute',
                 'regex' => self::REGEX_INTEGER
             ],
+            [
+                'xpath' => '//my-node/sub-node',
+                'regex' => '/^some-custom:+[a-z]+$/i',
+            ],
             ...
         ];
     }
