@@ -3,6 +3,7 @@ XML xpath based validation
 
 [![Latest Stable Version](https://poser.pugx.org/werd/xml-xpath-validation/v/stable)](https://packagist.org/packages/werd/xml-xpath-validation)
 [![Build Status](https://travis-ci.org/werdlv/xml-xpath-validation.svg?branch=master)](https://travis-ci.org/werdlv/xml-xpath-validation)
+[![License](https://poser.pugx.org/werd/xml-xpath-validation/license)](https://packagist.org/packages/werd/xml-xpath-validation)
 
 ##Features
 - Regex based validation
