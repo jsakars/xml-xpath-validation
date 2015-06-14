@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nodes>
+    <node type="regex-test-1">Node value</node>
+
+    <node type="regex-string-test-1" attribute="abcd"></node>
+
+    <node type="regex-integer-test-1" attribute="123"></node>
+    <node type="regex-integer-test-2" attribute="abcd"></node>
+    <node type="regex-integer-test-3">
+        <sub-node>1234</sub-node>
+    </node>
+
+    <node type="regex-boolean-test-1" attribute="true"></node>
+    <node type="regex-boolean-test-2" attribute="TRUE"></node>
+    <node type="regex-boolean-test-3" attribute="True"></node>
+    <node type="regex-boolean-test-4" attribute="trues"></node>
+
+    <node type="regex-boolean-test-5" attribute="false"></node>
+    <node type="regex-boolean-test-6" attribute="FALSE"></node>
+    <node type="regex-boolean-test-7" attribute="False"></node>
+    <node type="regex-boolean-test-8" attribute="false "></node>
+
+    <node type="occurrence-test-1">
+        <sub-node></sub-node>
+        <sub-node></sub-node>
+    </node>
+</nodes>
