@@ -10,6 +10,12 @@ XML xpath based validation
 - Element count validation
 - Compatible with PHP >= 5.6 and [HHVM](http://hhvm.com/)
 
+##Installation
+Through [Composer](https://getcomposer.org/):
+```
+$ composer require werd/xml-xpath-validation
+```
+
 ##Usage
 ```php
 use Werd\XmlXpathValidation\Validator;
