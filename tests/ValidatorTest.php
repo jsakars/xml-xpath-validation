@@ -33,178 +33,48 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->xmlPath = __DIR__ . '/data.xml';
     }
 
+    public function dataProvider()
+    {
+        return [
+            ['//none-existing-nodes', null, false],
+            ['//nodes/node[@type="regex-test-1"]', null],
+            ['//nodes/node[@type="regex-string-test-1"]/@attribute', RulableInterface::REGEX_STRING],
+            ['//nodes/node[@type="regex-integer-test-1"]/@attribute',RulableInterface::REGEX_INTEGER],
+            ['//nodes/node[@type="regex-integer-test-2"]/@attribute', RulableInterface::REGEX_INTEGER, false],
+            ['//nodes/node[@type="regex-integer-test-3"]/sub-node',RulableInterface::REGEX_INTEGER],
+            ['//nodes/node[@type="regex-boolean-test-1"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-2"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-3"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-4"]/@attribute', RulableInterface::REGEX_BOOLEAN, false],
+            ['//nodes/node[@type="regex-boolean-test-5"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-6"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-7"]/@attribute', RulableInterface::REGEX_BOOLEAN],
+            ['//nodes/node[@type="regex-boolean-test-8"]/@attribute', RulableInterface::REGEX_BOOLEAN, false],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProvider
+     * @param string $xpath
+     * @param string $regex
+     * @param bool $expected
+     */
+    public function testValidRules($xpath, $regex, $expected = true)
+    {
+        $this->assertEquals($expected, $this->validator->validate($this->xmlPath, [
+            [
+                'xpath' => $xpath,
+                'regex' => $regex
+            ]
+        ]));
+    }
+
     /**
      * @expectedException InvalidArgumentException
      */
     public function testXpathIsNotGiven()
     {
         $this->validator->validate($this->xmlPath, [[]]);
-    }
-
-    public function testXpathNotGiven()
-    {
-        $rules = [
-            [
-                'xpath' => '//none-existing-nodes'
-            ]
-        ];
-
-        $this->assertEquals(false, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testRegex1IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-test-1"]'
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testStringRegex1IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-string-test-1"]/@attribute',
-                'regex' => RulableInterface::REGEX_STRING
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testIntegerRegex1IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-integer-test-1"]/@attribute',
-                'regex' => RulableInterface::REGEX_INTEGER
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testIntegerRegex2IsNotValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-integer-test-2"]/@attribute',
-                'regex' => RulableInterface::REGEX_INTEGER
-            ]
-        ];
-
-        $this->assertEquals(false, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testIntegerRegex3IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-integer-test-3"]/sub-node',
-                'regex' => RulableInterface::REGEX_INTEGER
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex1IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-1"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex2IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-2"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex3IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-3"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex4IsNotValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-4"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(false, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex5IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-5"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex6IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-6"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex7IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-7"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
-    }
-
-    public function testBooleanRegex8IsValid()
-    {
-        $rules = [
-            [
-                'xpath' => '//nodes/node[@type="regex-boolean-test-8"]/@attribute',
-                'regex' => RulableInterface::REGEX_BOOLEAN
-            ]
-        ];
-
-        $this->assertEquals(false, $this->validator->validate($this->xmlPath, $rules));
     }
 
     public function testOccurrence1IsValid()
