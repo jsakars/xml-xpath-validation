@@ -3,7 +3,7 @@
 /**
  * This file is part of werd/xml-xpath-validation.
  *
- * (c) Jānis Šakars <janis.sakars@gmail.com>
+ * (c) Janis Sakars <janis.sakars@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
