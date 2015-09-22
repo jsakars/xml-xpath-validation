@@ -81,7 +81,19 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $rules = [
             [
                 'xpath'      => '//nodes/node[@type="occurrence-test-1"]',
-                'occurrence' => 2
+                'occurrence' => 1
+            ]
+        ];
+
+        $this->assertEquals(true, $this->validator->validate($this->xmlPath, $rules));
+    }
+
+    public function testOccurrence2IsNotValid()
+    {
+        $rules = [
+            [
+                'xpath'      => '//nodes/node[@type="occurrence-test-2"]',
+                'occurrence' => 3
             ]
         ];
 

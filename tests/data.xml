@@ -25,4 +25,7 @@
         <sub-node></sub-node>
         <sub-node></sub-node>
     </node>
+
+    <node type="occurrence-test-2"></node>
+    <node type="occurrence-test-2"></node>
 </nodes>
