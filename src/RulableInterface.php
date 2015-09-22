@@ -13,10 +13,8 @@ namespace Werd\XmlXpathValidation;
 
 interface RulableInterface
 {
-    const REGEX_STRING = '/^.+$/';
-
+    const REGEX_STRING  = '/^.+$/';
     const REGEX_INTEGER = '/^[0-9]+$/';
-
     const REGEX_BOOLEAN = '/((^true$)|(^false$))/i';
 
     /**

@@ -32,7 +32,7 @@ class Validator
      * Validate XML against given rules
      *
      * @param string $xml
-     * @param array $rules
+     * @param array  $rules
      * @return bool
      * @throws \Exception
      */
@@ -81,7 +81,7 @@ class Validator
         $valid = true;
 
         foreach ($this->elements as $element) {
-            $element = (string) $element;
+            $element = (string)$element;
             if (!preg_match($regex, $element)) {
                 $valid = false;
             }

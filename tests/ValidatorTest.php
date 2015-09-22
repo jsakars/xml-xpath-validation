@@ -29,7 +29,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->validator = new Validator();
-
         $this->xmlPath = __DIR__ . '/data.xml';
     }
 
@@ -57,7 +56,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
      * @dataProvider dataProvider
      * @param string $xpath
      * @param string $regex
-     * @param bool $expected
+     * @param bool   $expected
      */
     public function testValidRules($xpath, $regex, $expected = true)
     {
@@ -81,7 +80,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $rules = [
             [
-                'xpath' => '//nodes/node[@type="occurrence-test-1"]',
+                'xpath'      => '//nodes/node[@type="occurrence-test-1"]',
                 'occurrence' => 2
             ]
         ];
