@@ -98,12 +98,10 @@ class Validator
      */
     private function validateOccurrence($occurrence)
     {
-        $valid = true;
-
         if (count($this->elements) !== $occurrence) {
-            $valid = false;
+            return false;
         }
 
-        return $valid;
+        return true;
     }
 }
