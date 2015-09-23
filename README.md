@@ -7,8 +7,7 @@ XML xpath based validation
 [![License](https://poser.pugx.org/werd/xml-xpath-validation/license)](https://packagist.org/packages/werd/xml-xpath-validation)
 
 ##Features
-- Regex based validation
-- Element count validation
+- Regex based validation with element count validation
 - Compatible with PHP >= 5.5 and [HHVM](http://hhvm.com/)
 
 ##Installation
