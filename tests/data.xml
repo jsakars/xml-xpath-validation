@@ -19,7 +19,7 @@
     <node type="regex-boolean-test-5" attribute="false"></node>
     <node type="regex-boolean-test-6" attribute="FALSE"></node>
     <node type="regex-boolean-test-7" attribute="False"></node>
-    <node type="regex-boolean-test-8" attribute="false "></node>
+    <node type="regex-boolean-test-8" attribute="falses "></node>
 
     <node type="occurrence-test-1">
         <sub-node></sub-node>
