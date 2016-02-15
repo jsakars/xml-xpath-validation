@@ -1,7 +1,7 @@
 {
   "name": "werd/xml-xpath-validation",
   "type": "library",
-  "description": "XML xpath based validation",
+  "description": "XML XPath based validation",
   "keywords": ["xml", "xpath", "validation"],
   "license": "MIT",
   "authors": [
