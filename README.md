@@ -4,6 +4,7 @@ XML XPath based validation
 [![Latest Stable Version](https://poser.pugx.org/werd/xml-xpath-validation/v/stable)](https://packagist.org/packages/werd/xml-xpath-validation)
 [![Build Status](https://travis-ci.org/werdlv/xml-xpath-validation.svg?branch=master)](https://travis-ci.org/werdlv/xml-xpath-validation)
 [![Coverage Status](https://coveralls.io/repos/werdlv/xml-xpath-validation/badge.svg?branch=master&service=github)](https://coveralls.io/github/werdlv/xml-xpath-validation?branch=master)
+[![Dependency Status](https://www.versioneye.com/php/werd:xml-xpath-validation/dev-master/badge)](https://www.versioneye.com/php/werd:xml-xpath-validation/dev-master)
 [![License](https://poser.pugx.org/werd/xml-xpath-validation/license)](https://packagist.org/packages/werd/xml-xpath-validation)
 
 ##Features
