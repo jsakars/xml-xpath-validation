@@ -11,13 +11,13 @@ XML XPath based validation
 - Regex based validation with element count validation
 - Compatible with PHP >= 5.5 and [HHVM](http://hhvm.com/)
 
-##Installation
+## Installation
 Through [Composer](https://getcomposer.org/):
 ```
 $ composer require werd/xml-xpath-validation
 ```
 
-##Usage
+## Usage
 ```php
 use Werd\XmlXpathValidation\Validator;
 use Werd\XmlXpathValidation\RulableInterface;
